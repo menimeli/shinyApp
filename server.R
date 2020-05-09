@@ -12,7 +12,7 @@ shinyServer(function(input, output) {
     f <- reactive(input$folds)
     class <- reactive(input$classifier)
     observe({
-        if (( "rf" %in% class() && l() > 20) || ("svm" %in% class() && l() > 20 )){
+        if (( "rf" %in% class() && l() >= 20) || ("svm" %in% class() && l() >= 20 )){
             showNotification(ui = "Run time will be long!", duration = 10, type = "message")
         }
     })
