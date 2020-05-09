@@ -10,7 +10,7 @@ shinyUI(
     numericInput("loops", "Number of CV repeats", 25, min = 1, max = 50),
     numericInput("folds", "Number of CV folds", 5, min = 2, max = 10),
       sidebarLayout(
-          conditionalPanel( condition = "'knn' %in% input.classifier",
+          conditionalPanel( condition = "input.classifier.includes('knn')",
                 sidebarPanel(
                  sliderInput(inputId = "k",
                             label = "Value of k (for k nearest neighbours):",
